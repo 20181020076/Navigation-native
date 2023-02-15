@@ -1,23 +1,45 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Button, StyleSheet, Text, View, FlatList } from "react-native"
+import React, { useEffect } from "react"
+import ProductsItem from "../components/ProductsItem"
+import { PRODUCTS } from "../data/products"
 
+const ProductsScreen = ({ navigation, route }) => {
+  const newProducts = PRODUCTS.filter(
+    product => product.category === route.params.categoryId
+  )
 
-const ProductsScreen = ({navigation}) => {
+  const handleSelectedProduct = item => {
+    navigation.navigate("Details", {
+      name: item.name,
+    })
+  }
+
+  const renderProductItem = ({ item }) => (
+    <ProductsItem item={item} onSelected={handleSelectedProduct} />
+  )
+
   return (
-    <View style={styles.container}>
-      <Text>ProductsScreen</Text>
-      <Button title='Go to Details' onPress={()=>navigation.navigate('Details')} color='#EDF'/>
-      <Button title='Go Back' onPress={()=>navigation.goBack()}/>
-    </View>
+    <FlatList
+      data={newProducts}
+      renderItem={renderProductItem}
+      keyExtractor={item => item.id}
+      numColumns={2}
+      style={{flex: 1}}
+      horizontal={false}
+    />
   )
 }
 
 export default ProductsScreen
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent: 'center',
-        alignItems:'center'
-    }
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  productsContainer: {
+    height: 150,
+    width: 150,
+  },
 })

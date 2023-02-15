@@ -9,7 +9,7 @@ export const PRODUCTS = [
     },
     {
         id:'2',
-        category: '2',
+        category: '1',
         name: 'Pan Cibatta Blanco',
         description: 'pan de alta hidratacion, miga alveolada y corteza crujiente',
         weight: '800gr',
@@ -25,7 +25,7 @@ export const PRODUCTS = [
     },
     {
         id:'4',
-        category: '3',
+        category: '1',
         name: 'Pan de molde integral de Centeno',
         description: 'Pidelo entero entero o tajado con o sin semillas',
         weight: '350gr',
@@ -33,7 +33,31 @@ export const PRODUCTS = [
     },
     {
         id:'5',
-        category: '2',
+        category: '1',
+        name: 'Dona de Chocolate',
+        description: 'Dona cubierta de chocolate, puedes pedirlo con chocolate blanco',
+        weight: '300gr',
+        price: 20
+    },
+    {
+        id:'6',
+        category: '1',
+        name: 'Dona de Chocolate',
+        description: 'Dona cubierta de chocolate, puedes pedirlo con chocolate blanco',
+        weight: '300gr',
+        price: 20
+    },
+    {
+        id:'7',
+        category: '1',
+        name: 'Dona de Chocolate',
+        description: 'Dona cubierta de chocolate, puedes pedirlo con chocolate blanco',
+        weight: '300gr',
+        price: 20
+    },
+    {
+        id:'8',
+        category: '1',
         name: 'Dona de Chocolate',
         description: 'Dona cubierta de chocolate, puedes pedirlo con chocolate blanco',
         weight: '300gr',

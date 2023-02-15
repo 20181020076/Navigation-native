@@ -1,7 +1,10 @@
 import { StyleSheet, Text, View, Button } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const DetailsScreen = ({navigation}) => {
+const DetailsScreen = ({navigation, route}) => {
+  useEffect(()=>{
+    console.log(route.params)
+  },[])
   return (
     <View style={styles.container}>
       <Text>DetailsScreen</Text>
