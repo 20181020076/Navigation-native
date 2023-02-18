@@ -1,76 +1,80 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import ShopNavigator from "./ShopNavigation";
-import CartNavigator from "./CartNavigator";
-import OrdersNavigator from "./OrdersNavigator";
-import { StyleSheet, View, Text } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { StyleSheet, View, Text } from "react-native"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import Ionicons from "@expo/vector-icons/Ionicons"
 
-const BottonTabs = createBottomTabNavigator();
+import ShopNavigator from "./ShopNavigator"
+import CartNavigator from "./CartNavigator"
+import OrdersNavigator from "./OrdersNavigator"
 
-export default BottonTabsNavigator = () => {
+const BottomTabs = createBottomTabNavigator()
+
+export default BottomTabNavigator = () => {
   return (
-    <BottonTabs.Navigator
-      initialRouteName="Shoptab"
+    <BottomTabs.Navigator
+      initialRouteName="ShopTab"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: styles.tabBar,
       }}
     >
-      <BottonTabs.Screen
-        name="ShopTap"
+      <BottomTabs.Screen
+        name="ShopTab"
         component={ShopNavigator}
         options={{
           tabBarIcon: () => (
             <View style={styles.icon}>
-              <Ionicons name="home" size={20} color="black" />
+              <Ionicons name="home" size={25} color="black" />
               <Text>Tienda</Text>
             </View>
           ),
         }}
       />
-      <BottonTabs.Screen
+      <BottomTabs.Screen
         name="CartTab"
         component={CartNavigator}
         options={{
           tabBarIcon: () => (
             <View style={styles.icon}>
-              <Ionicons name="cart" size={20} color="black" />
+              <Ionicons name="cart" size={25} color="black" />
               <Text>Carrito</Text>
             </View>
           ),
         }}
       />
-      <BottonTabs.Screen
+      <BottomTabs.Screen
         name="OrdersTab"
         component={OrdersNavigator}
         options={{
           tabBarIcon: () => (
             <View style={styles.icon}>
-              <Ionicons name="list" size={20} color="black" />
+              <Ionicons name="list" size={25} color="black" />
               <Text>Ordenes</Text>
             </View>
           ),
         }}
       />
-    </BottonTabs.Navigator>
-  );
-};
+    </BottomTabs.Navigator>
+  )
+}
 
 const styles = StyleSheet.create({
   tabBar: {
-    shadowColor: "#7f5df0",
+    backgroundColor: "#fff",
+    paddingTop: 15,
+    borderTopEndRadius: 30,
+    borderTopStartRadius: 30,
+    height: 85,
+   
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.5,
-    shadowRadius: 0.5,
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
     elevation: 5,
-    bottom: 25,
-    borderRadius: 15,
-    height: 90,
   },
   icon: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
-});
+})
